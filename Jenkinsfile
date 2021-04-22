@@ -1,4 +1,6 @@
 node {
+    checkout scm
+
     stage('Build images') {
         files = findFiles(glob: '*')
         files.each {
