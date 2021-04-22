@@ -2,7 +2,7 @@ node {
     checkout scm
 
     stage('Build images') {
-        files = findFiles(exclude: 'Jenkinsfile')
+        files = findFiles(glob: '*.Containerfile')
         files.each {
             Containerfile ->
                 withEnv(["Containerfile=${Containerfile}"]) {
