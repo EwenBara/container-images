@@ -6,7 +6,8 @@ node {
         files.each {
             Containerfile ->
                 withEnv(["Containerfile=${Containerfile.name.replace('.Containerfile', '')}"]) {
-                    sh(label: '${Containerfile}', script: 'buildah bud --tag ${Containerfile} --file ${Containerfile}.Containerfile')
+                    echo ${Containerfile}
+                    sh 'buildah bud --tag ${Containerfile} --file ${Containerfile}.Containerfile'
                 }
         }
     }
