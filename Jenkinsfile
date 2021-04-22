@@ -2,11 +2,11 @@ node {
     checkout scm
 
     stage('Build images') {
-        files = findFiles(glob: '*')
+        files = findFiles(exclude: 'Jenkinsfile')
         files.each {
-            ContainerFile ->
-                withEnv(["ContainerFile=${ContainerFile}"]) {
-                    sh 'buildah bud -t ${ContainerFile} .'
+            Containerfile ->
+                withEnv(["Containerfile=${Containerfile}"]) {
+                    sh 'buildah bud --tag ${Containerfile} --file ${Containerfile}'
                 }
         }
     }
