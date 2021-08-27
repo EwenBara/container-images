@@ -2,7 +2,7 @@ FROM localhost/archlinux-builder
 USER root
 LABEL mainainer="Ewen BARA"
 
-RUN pacman -Sy --noconfirm npm firefox
-RUN npm install -g @angular/cli
+RUN pacman -Sy --noconfirm nodejs-lts-fermium npm6 firefox; \
+    npm install -g @angular/cli
 
 USER builder
