@@ -1,4 +1,4 @@
-FROM archlinux-builder
+FROM localhost/archlinux-builder
 USER root
 LABEL mainainer="Ewen BARA"
 
