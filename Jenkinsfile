@@ -34,7 +34,7 @@ node {
     def images = [:]
 
     stage('Build dependencies tree') {
-        files = findFiles(glob: '*.Containerfile')
+        files = findFiles(glob: '**/*.Containerfile')
         files.each {
             Containerfile ->
                 name = Containerfile.name.replace('.Containerfile', '')
