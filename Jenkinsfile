@@ -37,7 +37,7 @@ node {
         files = findFiles(glob: '**/*.Containerfile')
         files.each {
             Containerfile ->
-                name = Containerfile.name.replace('.Containerfile', '')
+                name = Containerfile.path.replace('.Containerfile', '')
                 images.putAt(name, new containerfile(name))
         }
 
