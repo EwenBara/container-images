@@ -79,4 +79,8 @@ node {
                 }
         }
     }
+
+    stage('Clean old images') {
+        sh 'podman image prune -a --filter until=$(date -I -d "now-1day")'
+    }
 }
