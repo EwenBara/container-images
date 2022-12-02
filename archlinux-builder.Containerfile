@@ -11,8 +11,8 @@ RUN echo $'\n\
     SigLevel = Optional\n\
     Server = https://mirrors.ewen-bara.com/archlinux/$repo/os/$arch\n'\
     >> /etc/pacman.conf; \
-    pacman --noconfirm --sync --refresh --upgrades --needed base base-devel; \
-    pacman --noconfirm --sync --clean--clean; \
+    pacman --noconfirm --sync --refresh --sysupgrade --needed base base-devel; \
+    pacman --noconfirm --sync --clean --clean; \
     useradd -m builder; \
     echo 'builder ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/builder
 
