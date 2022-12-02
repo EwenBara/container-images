@@ -5,7 +5,7 @@ LABEL maintainer="Ewen BARA"
 RUN echo $'\n\
     [aur]\n\
     SigLevel = Optional\n\
-    Server = https://mirrors.ewen-bara.com/archlinux/$repo/os/$arch\n'\
+    Server = https://mirrors.ewen-bara.com/archlinux/$repo/os/$arch\n\
     \n\
     [personal]\n\
     SigLevel = Optional\n\
